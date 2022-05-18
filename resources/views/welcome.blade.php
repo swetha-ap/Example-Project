@@ -11,6 +11,7 @@
     <br />
     <img src="../images/flower.jpg" alt="">
     <br /><br />
+    <h1>GIT EXAMPLE</h1>
     @yield('content')
     <a href="{{ route ('link1') }}">click1</a>
     <br /><br />
