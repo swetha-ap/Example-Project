@@ -20,5 +20,6 @@ use Illuminate\Support\Facades\Route;
 route::view('/','welcome');
 // we are setting a name reference for the blade file when using link
 route::view('a','eg1')->name('link1');
-route::view('index','eg2')->name('link2');
+route::view('index','displayprop')->name('link2');
 route::view('eg3','eg3')->name('link3');
+route::view('s','styles');

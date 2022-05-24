@@ -1,0 +1,32 @@
+h1{
+    color:crimson;
+    background-color: darkcyan;
+    text-align: center;
+}
+*{
+    color: chartreuse;
+    background-color: black;
+}
+div + p{
+    color: beige;
+    background-color: darkred;
+}
+p span{
+    color: darkgoldenrod;
+}
+input[type="text"]{
+    color: aqua;
+    
+}
+div{
+    height: 400px;
+    width:200px;
+    text-align: justify;
+    color: rebeccapurple;
+    font-style: italic;
+    font-family: 'Arial';
+}
+div h2,p{
+    color: rgb(241, 1, 1);
+    background-color: blue;
+}

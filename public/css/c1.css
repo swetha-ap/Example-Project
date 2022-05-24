@@ -1,0 +1,36 @@
+* {
+   background-color: burlywood;
+}
+h1{
+    text-align: center;
+}
+#one{
+    
+    color: brown;
+}
+div h3,p{
+    background-color: blue;
+}
+.c1{
+    text-align: center;
+    color: chartreuse;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkgreen;
+    background-color: darkgoldenrod;
+    text-align: right;
+}
+div + p{
+    color: blanchedalmond;
+    background-color: black;
+}
+input[type="text"] {
+   color: blueviolet;
+}
+p span{
+    background-color: brown;
+    color: coral;
+}
