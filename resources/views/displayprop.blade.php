@@ -8,9 +8,9 @@
     <style>
         li{
             display:inline;
-            padding: 10px;
+            padding: 50px;
             background-color: rgb(223, 141, 141);
-            margin: 20px;
+            margin: 50px;
             border: 5px dashed blue;
         }
         a{
@@ -21,7 +21,7 @@
             display: block;
         }
         h1{
-            /* to hide content*/
+            /* to hide content & its space in o/p*/
             display: none;
         }
         h2{
@@ -31,12 +31,13 @@
     </style>
 </head>
 <body>
+    <br /><br />
     <ul>
         <li><a href="">html</a></li>
         <li><a href="">css</a></li>
         <li><a href="">java</a></li>
     </ul>
-    <br />
+    <br /><br />
     <p>
         <a  href="">one</a>
         <a  href="">two</a>

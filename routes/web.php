@@ -23,3 +23,4 @@ route::view('a','eg1')->name('link1');
 route::view('index','displayprop')->name('link2');
 route::view('eg3','eg3')->name('link3');
 route::view('s','styles');
+route::view('p' , 'position');
