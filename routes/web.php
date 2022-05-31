@@ -24,3 +24,5 @@ route::view('index','displayprop')->name('link2');
 route::view('eg3','eg3')->name('link3');
 route::view('s','styles');
 route::view('p' , 'position');
+route::view('g' , 'grid');
+route::view('eg' , 'grideg');
