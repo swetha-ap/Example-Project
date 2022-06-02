@@ -10,13 +10,13 @@
             background-color: rgb(185, 142, 226);
             border: solid 2px black;
             display: grid;
-            /* height: 500px; */
+            height: 500px;
             /* display: inline-grid; size fits acc to the contents */
-            grid-template-columns: auto auto auto ;
-            /* grid-template-columns: 100px 50px 150px; */
+            /* grid-template-columns: auto auto auto ; */
+            grid-template-columns: 100px 50px 150px;
             /* grid-template-rows:150px 200px 100px ; */
-            /* column-gap: 20px; */
-            /* row-gap: 30px; */
+            column-gap: 20px;
+            row-gap: 30px;
             /* gap:30px 50px; */
             /* to set space horizontally b/w contents */
             /* justify-content: center; */
@@ -50,7 +50,7 @@
             /* grid-row-end: 3; */
             /* grid-row: 1/4; */
             /* grid-row: 2/span 2; */
-            grid-area:2/1/4/3;
+            /* grid-area:2/1/4/3; */
         }
      </style>
 </head>

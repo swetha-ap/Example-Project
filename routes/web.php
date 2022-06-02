@@ -26,3 +26,4 @@ route::view('s','styles');
 route::view('p' , 'position');
 route::view('g' , 'grid');
 route::view('eg' , 'grideg');
+route::view('b' , 'bootstrap');
