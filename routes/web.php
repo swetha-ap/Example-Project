@@ -27,3 +27,5 @@ route::view('p' , 'position');
 route::view('g' , 'grid');
 route::view('eg' , 'grideg');
 route::view('b' , 'bootstrap');
+route::view('t' , 'bstable');
+route::view('f' , 'bsforms');

@@ -42,14 +42,14 @@
             /* grid-column-start: 2; */
             /* grid-column-end: 4; */
             /* grid-column: 2/4; */
-            /* grid-column: 1/span 3; */
+            grid-column: 1/span 3;
         }
         .child4{
             /* to combine rows */
             /* grid-row-start: 1; */
             /* grid-row-end: 3; */
             /* grid-row: 1/4; */
-            /* grid-row: 2/span 2; */
+            grid-row: 2/span 2;
             /* grid-area:2/1/4/3; */
         }
      </style>
