@@ -29,3 +29,5 @@ route::view('eg' , 'grideg');
 route::view('b' , 'bootstrap');
 route::view('t' , 'bstable');
 route::view('f' , 'bsforms');
+route::view('j1' , 'jseg1');
+route::view('j2' , 'jseg2');
