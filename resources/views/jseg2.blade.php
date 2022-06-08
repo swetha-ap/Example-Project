@@ -45,6 +45,11 @@
         // document.write('name');
         // console.log(typeof(age));
         // console.log(age);
+            
+            // constant value
+        const pi=3.14
+        // pi=23
+        console.log(pi)
     </script>
     
 </body>

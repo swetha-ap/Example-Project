@@ -31,3 +31,5 @@ route::view('t' , 'bstable');
 route::view('f' , 'bsforms');
 route::view('j1' , 'jseg1');
 route::view('j2' , 'jseg2');
+route::view('j3' , 'alertpromptconfirm');
+route::view('j4' , 'condition');
