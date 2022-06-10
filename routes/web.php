@@ -33,3 +33,6 @@ route::view('j1' , 'jseg1');
 route::view('j2' , 'jseg2');
 route::view('j3' , 'alertpromptconfirm');
 route::view('j4' , 'condition');
+route::view('j5' , 'conditional2');
+route::view('j6' , 'loop');
+route::view('j7' , 'loopeg');
