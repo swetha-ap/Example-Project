@@ -21,21 +21,21 @@
         // console.log(res)
 
             // SUM OF ODD & EVEN NOS
-           var arr1=[10,23,45,26,8,11]
-           var sumeven=0
-           var sumodd=0
-        //    for(var i of arr1){
-              for(var i=0;i<=5;i++){
-            //    if(i%2==0){
-                  if(arr1[i]%2==0){
-                   sumeven+=arr1[i]
-               }
-               else{
-                   sumodd+=arr1[i]
-               }
-           }
-           console.log('even sum = '+sumeven)
-           console.log('odd sum = '+sumodd)
+        //    var arr1=[10,23,45,26,8,11]
+        //    var sumeven=0
+        //    var sumodd=0
+        // //    for(var i of arr1){
+        //       for(var i=0;i<=5;i++){
+        //     //    if(i%2==0){
+        //           if(arr1[i]%2==0){
+        //            sumeven+=arr1[i]
+        //        }
+        //        else{
+        //            sumodd+=arr1[i]
+        //        }
+        //    }
+        //    console.log('even sum = '+sumeven)
+        //    console.log('odd sum = '+sumodd)
 
                  
 

@@ -36,3 +36,5 @@ route::view('j4' , 'condition');
 route::view('j5' , 'conditional2');
 route::view('j6' , 'loop');
 route::view('j7' , 'loopeg');
+route::view('j8' , 'dowhileandnestedfor');
+route::view('j9' , 'functions');
