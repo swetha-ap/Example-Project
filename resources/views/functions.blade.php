@@ -9,16 +9,26 @@
 <body>
     <script>
         //  FUNCTION DEFINITION
-       function addition(num1,num2){
-        var sum = num1+num2
+    //    function addition(num1,num2){
+        // var sum = num1+num2
         // console.log("sum is " + sum)
-        return sum
+        // return sum
         // console.log("hai")
+    //    }
+        //  FUNCTION CALLING
+    //    var result= addition(4,9)
+    //    console.log("sum is " + result)
+    //    addition(60,40)
+
+    //    LITERAL FN DEFINITION
+    var add = (num1,num2)=>{
+        var sum = num1+num2
+        return sum
        }
         //  FUNCTION CALLING
-       var result= addition(4,9)
+       var result= add(10,15)
        console.log("sum is " + result)
-       addition(60,40)
+       
        
 
     </script>

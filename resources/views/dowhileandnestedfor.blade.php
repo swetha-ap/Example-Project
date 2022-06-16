@@ -161,19 +161,22 @@
         // COMMON ELEMENTS IN SEPERATE ARRAY
         var arr1=[1,2,3,4]
         var arr2=[2,3]
-    
-        var temp=0
+        var arr3=[]
+        var k=0
+        // var temp=0
         var length=arr1.length
         var length2=arr2.length
         for(var i=0;i<length;i++){
             for(var j=0;j<length2;j++){
                 if(arr1[i]==arr2[j]){
-                    temp=arr1[i]
-                    
+                    // temp=arr1[i]
+                   arr3[k]=arr1[i]
+                   k++
+
                 }
             }
         }
-        console.log(temp)
+        console.log(arr3)
     </script>
 </body>
 
