@@ -55,11 +55,23 @@
         </tr>
     </table>
     <script>
+        // count=0
+        //  function setdecimal(num1){
+        //     val= document.getElementById('disp').value
+        //     // console.log(val.length)
+        //     val_len=val.length
+        //     if(val[val_len-1]!='.'){
+        //         document.getElementById('disp').value+=num1
+        //     }
+        //  }
          function setdecimal(num1){
-            val= document.getElementById('disp').value
-            // console.log(val.length)
-            val_len=val.length
-            if(val[val_len-1]!='.'){
+            document.getElementById('disp').value
+            count+=1
+            if(count>1){
+                document.getElementById("myBtn").disabled=true
+            }
+            else{
+           
                 document.getElementById('disp').value+=num1
             }
          }
@@ -71,6 +83,8 @@
             document.getElementById('disp').value=""
         }
         function operations(op){
+            // count=0
+            // document.getElementById("myBtn").disabled=false
             curop=op
             temp_value=Number(document.getElementById('disp').value)
             // console.log(curop)
