@@ -44,3 +44,5 @@ route::view('j12' , 'calculator');
 route::view('j13' , 'todo');
 route::view('j14' , 'checkpassword');
 route::view('j15' , 'fruitslist');
+route::view('j16' , 'jscalculator');
+route::view('j17' , 'formvalidation');
