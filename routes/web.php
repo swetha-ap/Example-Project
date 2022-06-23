@@ -46,3 +46,5 @@ route::view('j14' , 'checkpassword');
 route::view('j15' , 'fruitslist');
 route::view('j16' , 'jscalculator');
 route::view('j17' , 'formvalidation');
+route::view('j18' , 'jsstringmethods');
+route::view('j19' , 'egstringmethod');
