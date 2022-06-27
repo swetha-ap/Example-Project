@@ -32,7 +32,7 @@
             for (let i = 0; i < text_arr.length; i++) {
                 count += 1
             }
-            console.log(count)
+            // console.log(count)
             document.getElementById("eg1").innerHTML = count
         }
 

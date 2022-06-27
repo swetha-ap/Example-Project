@@ -48,3 +48,6 @@ route::view('j16' , 'jscalculator');
 route::view('j17' , 'formvalidation');
 route::view('j18' , 'jsstringmethods');
 route::view('j19' , 'egstringmethod');
+route::view('j20' , 'jsarraymethods');
+route::view('j21' , 'jqueryegs');
+route::view('exam' , 'exam1');
