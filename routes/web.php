@@ -51,3 +51,4 @@ route::view('j19' , 'egstringmethod');
 route::view('j20' , 'jsarraymethods');
 route::view('j21' , 'jqueryegs');
 route::view('j22' , 'callbackfn');
+route::view('cartoon' , 'cartoon');
