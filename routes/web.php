@@ -50,4 +50,4 @@ route::view('j18' , 'jsstringmethods');
 route::view('j19' , 'egstringmethod');
 route::view('j20' , 'jsarraymethods');
 route::view('j21' , 'jqueryegs');
-route::view('exam' , 'exam1');
+route::view('j22' , 'callbackfn');

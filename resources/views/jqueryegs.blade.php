@@ -11,7 +11,7 @@
     <p id="p1" style="display:none ;">hello</p>
     <button id="btn1">click</button>
     <!-- <div id="d1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam iste itaque ducimus laboriosam, ipsa voluptates aut expedita non consequatur. Similique quos reprehenderit commodi nesciunt rem? Vero facere quaerat illum.</div> -->
-    <div id="d2" style="height: 150px; width:100px; background-color: blue;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sed delectus ipsum libero, quibusdam </div>
+    <div id="d2" style="height: 150px; width:100px; background-color: blue;position: relative; ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis sed delectus ipsum libero, quibusdam </div>
     
     <script>
         $(document).ready(function(){
@@ -36,10 +36,36 @@
                 // $("#p1").toggle()
                // $("#d2").fadeOut(4000)
                 // $("#d2").fadeTo(4000,0.2)
-                $("#d2").fadeToggle(4000)
+                // $("#d2").fadeToggle(4000)
+                // $("#d2").slideUp(4000)
+                // $("#d2").slideDown(4000)
+                // $("#d2").slideToggle(4000)
+                    // Chaining
+                // $("#d2")
+                // .slideDown(2000)
+                // .delay(2000)
+                // .slideUp(3000)
+                $("#d2")
+                .animate({
+                    // height:"300px",
+                    // width:"200px"
+                    left:"1000px"
+                
+                })
+                .delay(1000)
+                .animate({
+                    top:"700px"
+                 })
+                 .delay(1000)
+                .animate({
+                    left:"0px"
+                })
+                .delay(1000)
+                .animate({
+                    top:"0px"
+                })
             })
-           
-        })
+         })
     </script>
 </body>
 </html>
