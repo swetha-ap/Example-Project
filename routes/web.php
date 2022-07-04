@@ -52,3 +52,8 @@ route::view('j20' , 'jsarraymethods');
 route::view('j21' , 'jqueryegs');
 route::view('j22' , 'callbackfn');
 route::view('cartoon' , 'cartoon');
+route::view('j23' , 'jqueryhtml');
+route::view('j24' , 'jqueryfn');
+route::view('j25' , 'jqtraverse');
+route::view('j26' , 'jqvalidation');
+route::view('j27' , 'jqueryslider');
