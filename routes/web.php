@@ -57,3 +57,7 @@ route::view('j24' , 'jqueryfn');
 route::view('j25' , 'jqtraverse');
 route::view('j26' , 'jqvalidation');
 route::view('j27' , 'jqueryslider');
+
+// LARAVEL CRUD
+route::view('sum','laravel_crud/sum');
+route::post('sum',[App\Http\Controllers\myfunctions::class,'addition']);
