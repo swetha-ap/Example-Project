@@ -61,3 +61,5 @@ route::view('j27' , 'jqueryslider');
 // LARAVEL CRUD
 route::view('sum','laravel_crud/sum');
 route::post('sum',[App\Http\Controllers\myfunctions::class,'addition']);
+route::view('register','laravel_crud/reg_form');
+route::post('register',[App\Http\Controllers\myfunctions::class,'register']);
