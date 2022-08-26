@@ -63,3 +63,8 @@ route::view('sum','laravel_crud/sum');
 route::post('sum',[App\Http\Controllers\myfunctions::class,'addition']);
 route::view('register','laravel_crud/reg_form');
 route::post('register',[App\Http\Controllers\myfunctions::class,'register']);
+// route::view('show','laravel_crud/show_reg');
+route::get('show',[App\Http\Controllers\myfunctions::class,'show_data']);
+route::get('delete/{Id}',[App\Http\Controllers\myfunctions::class,'delete_data']);
+route::get('update/{Id}',[App\Http\Controllers\myfunctions::class,'nonupdated_data']);
+route::post('updatedata/{Id}',[App\Http\Controllers\myfunctions::class,'update_data']);
