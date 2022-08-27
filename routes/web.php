@@ -68,3 +68,6 @@ route::get('show',[App\Http\Controllers\myfunctions::class,'show_data']);
 route::get('delete/{Id}',[App\Http\Controllers\myfunctions::class,'delete_data']);
 route::get('update/{Id}',[App\Http\Controllers\myfunctions::class,'nonupdated_data']);
 route::post('updatedata/{Id}',[App\Http\Controllers\myfunctions::class,'update_data']);
+route::view('login','laravel_crud/login');
+route::post('login',[App\Http\Controllers\myfunctions::class,'login']);
+route::get('logout',[App\Http\Controllers\myfunctions::class,'logout']);

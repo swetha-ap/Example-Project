@@ -53,4 +53,34 @@ class myfunctions extends Controller
       ]); 
       return redirect('show');
     }
+
+                            // LOGIN
+    function login(Request $request){
+      $entered_email=$request->email;
+      $entered_pswd=$request->password;
+      $stored_email=DB::table('registration')->where('email',$entered_email)->first();
+      // return view('laravel_crud/login',['email'=>$stored_email]);
+      if(is_null($stored_email)){    //to check if value in the variable is empty ie input email not in db
+       $error="NO EMAIL DATA";
+       return view('laravel_crud/login',['error'=>$error]);
+      }
+      elseif($entered_email==$stored_email->email && $entered_pswd==$stored_email->password){ //check if login successful
+        $request->session()->put('session_started',$stored_email->id); //creating a session using id with a session name  
+        return redirect('show');
+      }
+      else{
+        $error="LOGIN UNSUCCESSFUL";
+        return view('laravel_crud/login',['error'=>$error]);
+      }
+    }
+
+                  //LOGOUT
+    function logout(){
+      session()->forget('session_started');
+      // session()->flush();    //this will delete all session broswer history typically used while deactivating
+      return redirect('laravel_crud/login');
+    }
 }
+
+                         
+  
