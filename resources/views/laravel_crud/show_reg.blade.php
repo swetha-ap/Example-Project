@@ -39,7 +39,7 @@
     @endforelse 
   </tbody>
 </table>
-<a href="{{ url('login') }}">LOGOUT</a>
+<a href="{{ url('logout') }}">LOGOUT</a>
 </div>
 </body>
 </html>

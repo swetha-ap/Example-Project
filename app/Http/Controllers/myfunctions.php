@@ -78,7 +78,38 @@ class myfunctions extends Controller
     function logout(){
       session()->forget('session_started');
       // session()->flush();    //this will delete all session broswer history typically used while deactivating
-      return redirect('laravel_crud/login');
+      return redirect('login');
+    }
+
+        //PROFILE AFTER LOGIN 
+    function profile(Request $request){
+      if(session()->has('session_started')){
+      $profile=$request->session()->get('session_started'); //to fetch session id of that particular user
+      $profile_details=DB::table('registration')->where('id',$profile)->first(); //fetch row from db of that profile id which matches with session id
+      return view('laravel_crud/profile',['profile'=>$profile_details]);
+      }
+      else{
+        echo "no session";
+      }
+    }
+
+    
+             //FILE UPLOAD FN
+    function file_upload(Request $request){
+      $name=$request->name;
+      $email=$request->email;
+      $upload_img="img".time().".".$request->upload->getClientOriginalExtension();//time() used to generate diff timespan for each img upload to make images unique
+      // echo $upload_img;
+      $request->upload->storeAs("public/laravelimages",$upload_img); //img uploaded from input box is stored in a new folder under PUBLIC
+      DB::table('fileupload')->insert(['name'=>$name ,'email'=>$email,'upload'=>$upload_img]);
+      // return view('laravel_crud/fileupload',['msg'=>"successfully inserted"]);
+      return redirect('showfile');
+  
+    }
+
+    function show_file(){
+      $get_data = DB::table('fileupload')->get();
+      return view('laravel_crud/showfile',['retrieve_data'=>$get_data]);
     }
 }
 

@@ -71,3 +71,12 @@ route::post('updatedata/{Id}',[App\Http\Controllers\myfunctions::class,'update_d
 route::view('login','laravel_crud/login');
 route::post('login',[App\Http\Controllers\myfunctions::class,'login']);
 route::get('logout',[App\Http\Controllers\myfunctions::class,'logout']);
+route::get('profile',[App\Http\Controllers\myfunctions::class,'profile']);
+route::view('upload','laravel_crud/fileupload');
+route::post('upload',[App\Http\Controllers\myfunctions::class,'file_upload']);
+route::view('showfile','laravel_crud/showfile');
+route::get('showfile',[App\Http\Controllers\myfunctions::class,'show_file']);
+
+//e orm
+route::view('ormreg','laravel_crud/orm_reg');
+route::post('ormreg',[App\Http\Controllers\eorm::class,'data_insert']);
