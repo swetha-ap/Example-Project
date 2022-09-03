@@ -79,4 +79,8 @@ route::get('showfile',[App\Http\Controllers\myfunctions::class,'show_file']);
 
 //e orm
 route::view('ormreg','laravel_crud/orm_reg');
-route::post('ormreg',[App\Http\Controllers\eorm::class,'data_insert']);
+route::post('ormreg',[App\Http\Controllers\eorm::class,'data_insert']); //data insert
+route::get('ormreg',[App\Http\Controllers\eorm::class,'data_retrieve']); //data retrieve
+route::get('delete_data/{Id}',[App\Http\Controllers\eorm::class,'delete_data']);   //data deletion
+route::get('nonupdated_data/{Id}',[App\Http\Controllers\eorm::class,'nonupdated_data']); 
+route::post('update_data/{Id}',[App\Http\Controllers\eorm::class,'update_data']);

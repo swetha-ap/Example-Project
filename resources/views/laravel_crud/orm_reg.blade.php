@@ -23,5 +23,26 @@
         <br /><br>
         <button type="submit" name="submit">SUBMIT</button>
     </form>
+    <br><br><br>
+    <table style="border:1px solid black;">
+        <tr >
+            <td>ID</td>
+            <td>FIRST NAME</td>
+            <td>LAST NAME</td>
+            <td>EMAIL</td>
+            <td>PASSWORD</td>
+        </tr>
+        @foreach($data as $i)
+        <tr>
+            <td>{{$i->id}}</td>
+            <td>{{$i->firstname}}</td>
+            <td>{{$i->lastname}}</td>
+            <td>{{$i->email}}</td>
+            <td>{{$i->password}}</td>
+            <td><a href="{{url('delete_data')}}/{{$i->id}}">DELETE</a></td>
+            <td><a href="{{url('nonupdated_data')}}/{{$i->id}}">UPDATE</a></td>
+        </tr>
+        @endforeach
+    </table>
 </body>
 </html>
