@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\myfunctions;
+use App\Http\Controllers\eorm;
+use App\Http\Controllers\ajaxfn;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,18 +67,18 @@ route::post('sum',[App\Http\Controllers\myfunctions::class,'addition']);
 route::view('register','laravel_crud/reg_form');
 route::post('register',[App\Http\Controllers\myfunctions::class,'register']);
 // route::view('show','laravel_crud/show_reg');
-route::get('show',[App\Http\Controllers\myfunctions::class,'show_data']);
-route::get('delete/{Id}',[App\Http\Controllers\myfunctions::class,'delete_data']);
-route::get('update/{Id}',[App\Http\Controllers\myfunctions::class,'nonupdated_data']);
-route::post('updatedata/{Id}',[App\Http\Controllers\myfunctions::class,'update_data']);
+route::get('show',[myfunctions::class,'show_data']);
+route::get('delete/{Id}',[myfunctions::class,'delete_data']);
+route::get('update/{Id}',[myfunctions::class,'nonupdated_data']);
+route::post('updatedata/{Id}',[myfunctions::class,'update_data']);
 route::view('login','laravel_crud/login');
-route::post('login',[App\Http\Controllers\myfunctions::class,'login']);
-route::get('logout',[App\Http\Controllers\myfunctions::class,'logout']);
-route::get('profile',[App\Http\Controllers\myfunctions::class,'profile']);
+route::post('login',[myfunctions::class,'login']);
+route::get('logout',[myfunctions::class,'logout']);
+route::get('profile',[myfunctions::class,'profile']);
 route::view('upload','laravel_crud/fileupload');
-route::post('upload',[App\Http\Controllers\myfunctions::class,'file_upload']);
+route::post('upload',[myfunctions::class,'file_upload']);
 route::view('showfile','laravel_crud/showfile');
-route::get('showfile',[App\Http\Controllers\myfunctions::class,'show_file']);
+route::get('showfile',[myfunctions::class,'show_file']);
 
 //e orm
 route::view('ormreg','laravel_crud/orm_reg');
@@ -84,3 +87,8 @@ route::get('ormreg',[App\Http\Controllers\eorm::class,'data_retrieve']); //data 
 route::get('delete_data/{Id}',[App\Http\Controllers\eorm::class,'delete_data']);   //data deletion
 route::get('nonupdated_data/{Id}',[App\Http\Controllers\eorm::class,'nonupdated_data']); 
 route::post('update_data/{Id}',[App\Http\Controllers\eorm::class,'update_data']);
+
+//AJAX
+route::view('arform','ajax/reg_form');
+route::post('ar',[ajaxfn::class,'ajax_data_insert']); //different url name from view must be given when using ajax fn
+route::post('archeck',[ajaxfn::class,'check_name']);
