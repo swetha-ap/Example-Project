@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-<body>
+<body onload='show_data()'>
     <div class="container">
         
             <label for="">NAME</label>
@@ -26,21 +26,15 @@
             <button type="submit" id="submit">SUBMIT</button>
    
         <br><br><br>
-        <table class="table">
+        <table class="table" id="table_show">
             <thead>
                 <tr>
+                <td>ID</td>
                 <td>NAME</td>
                 <td>EMAIL</td>
                 <td>PASSWORD</td>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
         </table>
     </div>
     <script>
@@ -61,7 +55,7 @@
               },
               
               success:function(){
-                alert('ajax working');
+                show_data();
               }
             })
         })
@@ -82,6 +76,40 @@
                 })
             }
         })
+        //to show data from db
+        function show_data(){
+            $.ajax({
+                url:'arshow',
+                type:'GET',
+                success:function(Response){
+                    // console.log(Response.data_retrieve); //shows all data in db in array format
+                    // now append data in table
+                    db_data=Response.data_retrieve; //storing db values to a variable
+                    $('.permanent').remove();  //to remove repeatation of rows, we delete rows with same classname before for loop
+                    for(i=0;i<db_data.length;i++){
+                        $('#table_show').append('<tr class="permanent"><td>'+ db_data[i].id  //calling table using its id
+                         +'</td><td>'+ db_data[i].name
+                         +'</td><td>'+ db_data[i].email
+                         +'</td><td>'+ db_data[i].password 
+                         +'</td><td> <button onclick="delete_row('+ db_data[i].id  +')">DELETE</button> </td></tr>')
+                    }
+                }
+            })
+        }
+         //DELETE FN
+         function delete_row(get_id){
+            $.ajax({
+                url:'ardelete',
+                type:'POST',
+                data:{ 
+                    delete_id:get_id  //passing id of the row to be deleted
+                    },
+                success:function(){
+                  show_data();     
+                }
+            })
+            // alert(get_id);
+         }
        
     </script>
 </body>

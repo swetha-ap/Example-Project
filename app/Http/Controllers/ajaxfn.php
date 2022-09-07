@@ -28,4 +28,16 @@ class ajaxfn extends Controller
             return Response::json(array('success'=>true,'msg'=>'name already present'));
         }
     }
+
+    //to fech data from db
+    function show_values(){
+        $get_data=DB::table('ajaxreg')->get();
+        return Response::json(array('data_retrieve'=>$get_data));
+    }
+
+    //delete rows
+    function delete_values(Request $request){
+        $row_to_delete=$request->delete_id; //key name from blade's delete fn is passed here
+        DB::table('ajaxreg')->where('id',$row_to_delete)->delete();
+    }
 }

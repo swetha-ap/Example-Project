@@ -92,3 +92,5 @@ route::post('update_data/{Id}',[App\Http\Controllers\eorm::class,'update_data'])
 route::view('arform','ajax/reg_form');
 route::post('ar',[ajaxfn::class,'ajax_data_insert']); //different url name from view must be given when using ajax fn
 route::post('archeck',[ajaxfn::class,'check_name']);
+route::get('arshow',[ajaxfn::class,'show_values']);
+route::post('ardelete',[ajaxfn::class,'delete_values']);
