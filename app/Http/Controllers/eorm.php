@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Hash;
+use Session;
 use App\Models\clients;        //importing MODEL Client to this Controller
 
 
@@ -14,6 +15,7 @@ class eorm extends Controller
         $fname=$request->fname;
         $lname=$request->lname;
         $email=$request->email;
+        // $pswd=Hash::make($request->pswd);
         $pswd=$request->pswd;
         $client_obj=new clients(['firstname'=>$fname,'lastname'=>$lname,'email'=>$email,'password'=>$pswd]); //Passing form values into DB Table
         $client_obj->save();   
@@ -47,5 +49,40 @@ class eorm extends Controller
         $pswd=$request->pswd;
         clients::find($id)->update(['firstname'=>$fname,'lastname'=>$lname,'email'=>$email,'password'=>$pswd]); //updating data acc to id
         return redirect('ormreg');
+    }
+
+    function login(Request $request){
+        $email=$request->email;
+        $password=$request->password;
+        $data=clients::where('email','=',$email)->first();
+        if($data){
+            if($password==$data->password){
+                $request->Session()->put('loginid',$data->id);
+                return redirect('dash');
+            }
+            else{
+                $error="password dont match";
+                return view('laravel_crud/loginorm',['error'=>$error]);
+            }
+        }
+        else{
+            $error="email doesnt exist";
+            return view('laravel_crud/loginorm',['error'=>$error]);
+        }
+    }
+
+    function dash(){
+        if(Session::has('loginid')){
+        $dashid=Session::get('loginid');
+        $data=clients::where('id',$dashid)->first();
+        }
+        return view('laravel_crud/dashorm',['data'=>$data]);
+    }
+
+    function logout(){
+        if(Session::has('loginid')){
+            Session::pull('loginid');
+            return redirect('log');
+        }
     }
 }

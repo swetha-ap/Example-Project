@@ -87,6 +87,11 @@ route::get('ormreg',[App\Http\Controllers\eorm::class,'data_retrieve']); //data 
 route::get('delete_data/{Id}',[App\Http\Controllers\eorm::class,'delete_data']);   //data deletion
 route::get('nonupdated_data/{Id}',[App\Http\Controllers\eorm::class,'nonupdated_data']); 
 route::post('update_data/{Id}',[App\Http\Controllers\eorm::class,'update_data']);
+route::view('log','laravel_crud/loginorm');
+route::post('log',[eorm::class,'login']);
+route::view('dash','laravel_crud/dashorm');
+route::get('dash',[eorm::class,'dash']);
+route::get('logout',[eorm::class,'logout']);
 
 //AJAX
 route::view('arform','ajax/reg_form');

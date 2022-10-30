@@ -28,10 +28,5 @@
         }
         
     </script>
-
-
-
-
-
 </body>
 </html>

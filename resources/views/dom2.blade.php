@@ -26,10 +26,6 @@
         // document.getElementById("result").value= sum
         document.getElementById("text3").innerHTML += sum
     }
-     
-
-
-  </script>
-
+   </script>
 </body>
 </html>

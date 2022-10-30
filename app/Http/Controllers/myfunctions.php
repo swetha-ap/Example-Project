@@ -43,7 +43,7 @@ class myfunctions extends Controller
        return view('laravel_crud/update_reg',['non_updated_data'=>$get_nonupdated_data]);
     }
 
-    function update_data(Request $request , $id){
+    function update_data(Request $request,$id){
       $fname=$request->fname;
       $lname=$request->lname;
       $email=$request->email;
