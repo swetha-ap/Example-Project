@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Hash;
 use Session;
 use App\Models\clients;        //importing MODEL Client to this Controller
+use App\Models\category; 
+use App\Models\product;
+use Response;
 
 
 class eorm extends Controller
@@ -84,5 +87,44 @@ class eorm extends Controller
             Session::pull('loginid');
             return redirect('log');
         }
+    }
+
+    function insert_cat(Request $request){
+        $name=$request->name;
+        $desc=$request->desc;
+        $incharge=$request->incharge;
+        $obj=new category(['name'=>$name,'desc'=>$desc,'incharge'=>$incharge]);
+        $cat=$obj->save();
+        if($cat){
+            return view('joinlaravel/category',['msg'=>'entered']);
+        }
+        else{
+            return view('joinlaravel/category',['msg'=>'error']);
+        }
+    }
+
+    function get_cat(){
+        $category=category::all();
+        return Response::json(array('success'=>true,'cat'=>$category));
+    }
+
+    function insert_product(Request $request){
+        $name=$request->name;
+        $price=$request->price;
+        $pdate=$request->pdate;
+        $category=$request->category;
+        $pro=new product(['pname'=>$name,'price'=>$price,'add_date'=>$pdate,'fk_cat_id'=>$category]);
+        $p1=$pro->save();
+        if($p1){
+            return view('joinlaravel/product',['msg'=>'entered']);
+        }
+        else{
+            return view('joinlaravel/product',['msg'=>'error']);
+        }
+    }
+
+    function show_product(){
+        $products=product::select('products.pname','products.price','categories.name','categories.incharge')->join('categories','categories.id','=','products.fk_cat_id')->get();
+        return view('joinlaravel/showproduct',['product'=>$products]);
     }
 }

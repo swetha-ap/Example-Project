@@ -99,3 +99,12 @@ route::post('ar',[ajaxfn::class,'ajax_data_insert']); //different url name from 
 route::post('archeck',[ajaxfn::class,'check_name']);
 route::get('arshow',[ajaxfn::class,'show_values']);
 route::post('ardelete',[ajaxfn::class,'delete_values']);
+
+//JOIN
+route::view('cat','joinlaravel/category');
+route::post('cat',[eorm::class,'insert_cat']);
+Route::view('pro','joinlaravel/product');
+Route::get('get_productcategory',[eorm::class,'get_cat']); //calling ajax fn to get categories in select box on load of product
+route::post('pro',[eorm::class,'insert_product']);
+route::view('showpro','joinlaravel/showproduct');
+route::get('showpro',[eorm::class,'show_product']);
