@@ -109,6 +109,15 @@ class eorm extends Controller
     }
 
     function insert_product(Request $request){
+        $validate_data=$request->validate([ //validation rules
+            'name'=>'required|min:3',
+            'price'=>'required'
+        ],
+        [                         //validation messages
+            'name.required'=>'product name is required',
+            'name.min'=>'name should have minimum 3 characters',
+            'price.required'=>'price is needed'
+        ]);
         $name=$request->name;
         $price=$request->price;
         $pdate=$request->pdate;

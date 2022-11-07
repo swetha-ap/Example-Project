@@ -13,8 +13,14 @@
         @csrf
         <label for="name">enter product name</label>
         <input type="text" name="name" id=""><br>
+        @if($errors->has('name'))  
+         <span style="display:block;color:red;">{{$errors->first('name')}}</span>
+        @endif
         <label for="price">enter product price</label>
         <input type="text" name="price" id=""><br>
+        @if($errors->has('price'))
+         <span style="display:block;color:red;">{{$errors->first('price')}}</span>
+        @endif
         <label for="date">add date</label>
         <input type="date" name="pdate" id=""><br>
         <label for="category">enter category</label>
